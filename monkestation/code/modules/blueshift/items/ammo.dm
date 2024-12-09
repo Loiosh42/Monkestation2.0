@@ -1105,6 +1105,11 @@
 	desc = "A 12 gauge uranium slug purpose-built to break bones on impact."
 	can_be_printed = FALSE // noted as adminonly in code/modules/projectiles/projectile/bullets/shotgun.dm
 
+/obj/item/ammo_casing/shotgun/apds  //This SHOULD theoretically let you print the shells in the ammo lath
+	can_be_printed = TRUE
+	advanced_print_req = TRUE
+	custom_materials = AMMO_MATS_SHOTGUN_PLASMA //plastanium -> tungsten approximation
+
 /obj/item/ammo_casing/shotgun/incendiary
 	name = "incendiary slug"
 	desc = "A 12 gauge magnesium slug meant for \"setting shit on fire and looking cool while you do it\".\
