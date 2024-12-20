@@ -980,62 +980,7 @@
 
 	return .
 
-/// Tutel shield, designed to work with the Bobr
-/// Comes with a built-in 4 round ammobox to allow for easy reloading
-/// I based it off of ammo_box instead of shield because I believe ammo_box is more complicated
 
-/obj/item/ammo_box/advanced/s12gauge/tutel
-	name = "Tutel tactical buckler"
-	desc = "A lightweight titanium-alloy shield painted to look like wood. It has an integrated shotgun shell tube, allowing you to reload without putting down the shield."
-	icon_state = "buckler"
-	inhand_icon_state = "buckler"
-	custom_materials = list(/datum/material/iron= SHEET_MATERIAL_AMOUNT * 10) //Yes yes, I know, you do still repair it with titanium
-	ammo_type = /obj/item/ammo_casing/shotgun
-	max_ammo = 4
-	caliber = CALIBER_SHOTGUN
-	multitype = TRUE
-	block_chance = 40
-	max_integrity = 70
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	force = 15
-	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb_continuous = list("shoves", "bashes")
-	attack_verb_simple = list("shove", "bash")
-	armor_type = /datum/armor/item_shield
-	block_sound = 'sound/weapons/block_shield.ogg'
-
-/obj/item/ammo_box/advanced/s12gauge/tutel/examine(mob/user)
-	. = ..()
-	var/healthpercent = round((atom_integrity/max_integrity) * 100, 1)
-	switch(healthpercent)
-		if(50 to 99)
-			. += span_info("It looks slightly damaged.")
-		if(25 to 50)
-			. += span_info("It appears heavily damaged.")
-		if(0 to 25)
-			. += span_warning("It's falling apart!")
-
-/obj/item/ammo_box/advanced/s12gauge/tutel/proc/on_shield_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
-	if (atom_integrity <= damage)
-		var/turf/owner_turf = get_turf(owner)
-		owner_turf.visible_message(span_warning("[hitby] destroys [src]!"))
-		playsound(owner, shield_break_sound, 50)
-		qdel(src)
-		return FALSE
-	take_damage(damage)
-	return TRUE
-
-/obj/item/ammo_box/advanced/s12gauge/tutel/attackby(obj/item/attackby_item, mob/user, params)
-	if(istype(attackby_item, /obj/item/stack/sheet/mineral/titanium))
-		if (atom_integrity >= max_integrity)
-			to_chat(user, span_warning("[src] is already in perfect condition."))
-			return
-		var/obj/item/stack/sheet/mineral/titanium/titanium_sheet = attackby_item
-		titanium_sheet.use(1)
-		atom_integrity = max_integrity
-		to_chat(user, span_notice("You repair [src] with [titanium_sheet]."))
-		return
-	return ..()
 
 // Base Sol SMG
 
