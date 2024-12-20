@@ -980,8 +980,6 @@
 
 	return .
 
-
-
 // Base Sol SMG
 
 /obj/item/gun/ballistic/automatic/sol_smg
