@@ -6772,7 +6772,6 @@
 #include "monkestation\code\modules\blueshift\items\soul_catcher.dm"
 #include "monkestation\code\modules\blueshift\items\survival_pack.dm"
 #include "monkestation\code\modules\blueshift\items\syndicate.dm"
-#include "monkestation\code\modules\blueshift\items\tactical_shields.dm"
 #include "monkestation\code\modules\blueshift\items\tools.dm"
 #include "monkestation\code\modules\blueshift\items\armor\ash_walker.dm"
 #include "monkestation\code\modules\blueshift\looping_sounds\flatpack.dm"
