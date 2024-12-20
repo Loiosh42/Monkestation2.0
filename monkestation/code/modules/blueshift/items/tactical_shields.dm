@@ -35,7 +35,7 @@
 			. += span_warning("It's falling apart!")
 
 /obj/item/ammo_box/advanced/s12gauge/tutel/proc/shatter(mob/living/carbon/human/owner)
-	playsound(owner, shield_break_sound, 50)
+	playsound(owner, 'sound/effects/bang.ogg', 50)
 	AddComponent(/datum/component/pellet_cloud, projectile_type = /obj/projectile/bullet/shrapnel, magnitude = 1)
 	new tutel_break_leftover(get_turf(src))
 
@@ -78,7 +78,7 @@
 	. = ..()
 
 	var/static/list/hovering_item_typechecks = list(
-		/obj/item/stack/sheet/mineral/titanium/titanium_sheet = list(
+		/obj/item/stack/sheet/mineral/titanium = list(
 			SCREENTIP_CONTEXT_LMB = "Repair shield",
 		),
 
@@ -87,7 +87,7 @@
 	AddElement(/datum/element/contextual_screentip_item_typechecks, hovering_item_typechecks)
 
 /obj/item/wirerodbroken_shield/attackby(obj/item/attacking_item, mob/user, params)
-	if(istype(attacking_item, /obj/item/stack/sheet/mineral/titanium/titanium_sheet))
+	if(istype(attacking_item, /obj/item/stack/sheet/mineral/titanium))
 		var/datum/crafting_recipe/recipe_to_use = /datum/crafting_recipe/tutel
 		user.balloon_alert(user, "crafting spear...")
 		if(do_after(user, initial(recipe_to_use.time), src)) // we do initial work here to get the correct timer
@@ -109,7 +109,7 @@
 	result = /obj/item/ammo_box/advanced/s12gauge/tutel
 	reqs = list(
 		/obj/item/broken_shield = 1,
-		/obj/item/stack/sheet/mineral/titanium/titanium_sheet = 1,
+		/obj/item/stack/sheet/mineral/titanium = 1,
 	)
 	time = 15 SECONDS
 	category = CAT_WEAPON_MELEE
