@@ -78,6 +78,10 @@
 	item_type = /obj/item/trench_tool
 	cost = PAYCHECK_CREW
 
+/datum/armament_entry/company_import/nri_surplus/misc/tactical_shield
+	item_type = /obj/item/ammo_box/advanced/s12gauge/tutel
+	cost = PAYCHECK_COMMAND * 6
+
 /datum/armament_entry/company_import/nri_surplus/firearm
 	subcategory = "Firearms"
 
