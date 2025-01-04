@@ -6,6 +6,8 @@
 	name = "Tutel tactical buckler"
 	desc = "A lightweight titanium-alloy shield painted to look like wood. It has an integrated shotgun shell tube, allowing you to reload without putting down the shield."
 	icon = 'icons/obj/weapons/shields.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	icon_state = "buckler"
 	inhand_icon_state = "buckler"
 	custom_materials = list(/datum/material/iron= SHEET_MATERIAL_AMOUNT * 10) //Yes yes, I know, you do still repair it with titanium
