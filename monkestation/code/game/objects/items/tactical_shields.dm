@@ -5,7 +5,7 @@
 /obj/item/ammo_box/advanced/s12gauge/tutel
 	name = "Tutel tactical buckler"
 	desc = "A lightweight titanium-alloy shield painted to look like wood. It has an integrated shotgun shell tube, allowing you to reload without putting down the shield."
-	icon = 'monkestation/icons/obj/weapons/shields.dmi'
+	icon = 'icons/obj/weapons/shields.dmi'
 	icon_state = "buckler"
 	inhand_icon_state = "buckler"
 	custom_materials = list(/datum/material/iron= SHEET_MATERIAL_AMOUNT * 10) //Yes yes, I know, you do still repair it with titanium
@@ -22,6 +22,7 @@
 	attack_verb_simple = list("shove", "bash")
 	armor_type = /datum/armor/item_shield
 	block_sound = 'sound/weapons/block_shield.ogg'
+	start_empty = TRUE
 	var/tutel_break_leftover = /obj/item/broken_shield
 
 /obj/item/ammo_box/advanced/s12gauge/tutel/examine(mob/user)
