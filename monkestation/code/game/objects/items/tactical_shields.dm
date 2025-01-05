@@ -40,7 +40,7 @@
 
 /obj/item/ammo_box/advanced/s12gauge/tutel/proc/shatter(mob/living/carbon/human/owner)
 	playsound(owner, 'sound/effects/bang.ogg', 50)
-	AddComponent(/datum/component/pellet_cloud, projectile_type = /obj/projectile/bullet/shrapnel, magnitude = 1)
+	AddComponent(/datum/component/pellet_cloud, projectile_type = /obj/projectile/bullet/shrapnel, magnitude = 2)
 	new tutel_break_leftover(get_turf(src))
 
 /obj/item/ammo_box/advanced/s12gauge/tutel/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
@@ -92,7 +92,7 @@
 
 	AddElement(/datum/element/contextual_screentip_item_typechecks, hovering_item_typechecks)
 
-/obj/item/wirerodbroken_shield/attackby(obj/item/attacking_item, mob/user, params)
+/obj/item/broken_shield/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/stack/sheet/mineral/titanium))
 		var/datum/crafting_recipe/recipe_to_use = /datum/crafting_recipe/tutel
 		user.balloon_alert(user, "repairing shield...")
