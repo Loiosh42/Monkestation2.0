@@ -12,11 +12,11 @@
 	inhand_icon_state = "buckler"
 	custom_materials = list(/datum/material/iron= SHEET_MATERIAL_AMOUNT * 10) //Yes yes, I know, you do still repair it with titanium
 	ammo_type = /obj/item/ammo_casing/shotgun
-	max_ammo = 4
+	max_ammo = 8
 	caliber = CALIBER_SHOTGUN
 	multitype = TRUE
-	block_chance = 75
-	max_integrity = 50
+	block_chance = 60
+	max_integrity = 60
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	force = 15
 	w_class = WEIGHT_CLASS_NORMAL
