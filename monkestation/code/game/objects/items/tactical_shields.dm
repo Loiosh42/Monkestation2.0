@@ -4,7 +4,7 @@
 
 /obj/item/ammo_box/advanced/s12gauge/tutel
 	name = "Tutel tactical buckler"
-	desc = "A lightweight titanium-alloy shield painted to look like wood. It has an integrated shotgun shell tube, allowing you to reload without putting down the shield."
+	desc = "A lightweight titanium-alloy shield painted to look like wood. It has an integrated shotgun speedloader, allowing you to reload without putting down the shield."
 	icon = 'icons/obj/weapons/shields.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
