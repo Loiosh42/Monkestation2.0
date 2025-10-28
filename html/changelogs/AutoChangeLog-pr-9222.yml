@@ -1,0 +1,4 @@
+author: "Absolucy"
+delete-after: True
+changes:
+  - bugfix: "Storytellers should now be the only thing firing events, rather than the legacy Events subsystem."
